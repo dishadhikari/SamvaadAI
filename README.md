@@ -1,11 +1,12 @@
 
 # SamvaadAI
-
 ### Every Voice Deserves to Be Heard.
 
 **An AI-powered communication platform bridging Indian Sign Language and spoken communication through Gnani AI.**
 
 SamvaadAI enables non-speaking individuals to communicate effortlessly with people who speak normally through a shared, real-time video calling experience.
+Demo Video- https://drive.google.com/file/d/1YVckQVy5MBim6qPXXN49KbhueaLKFwez/view?usp=sharing
+Github Repository- https://github.com/dishadhikari/SamvaadAI
 
 ---
 
@@ -70,14 +71,12 @@ It combines real-time video calling with Gnani AI's speech technologies to enabl
 - Two-person video calling using WebRTC.
 - Meeting creation and joining through unique room codes.
 - Live audio and video communication.
-- Camera and microphone controls.
 - Connection status and reconnection handling.
 
 ### Sign Language Communication
 
 - Webcam-based hand landmark extraction using MediaPipe.
 - Sign-to-text processing workflow.
-- Editable interpreted messages.
 - User approval before message delivery.
 - Architecture ready for integration with a trained ISL recognition model.
 
@@ -88,14 +87,6 @@ It combines real-time video calling with Gnani AI's speech technologies to enabl
 | **Prisma** | Speech-to-text transcription |
 | **Timbre** | Text-to-speech generation |
 | **Evon** | Contextual reasoning and language refinement |
-
-### Accessible Conversation Experience
-
-- Two-way communication in a single video call.
-- Text and AI-generated voice delivery.
-- Live captions and transcription fallback.
-- Real-time message delivery.
-- User-controlled message approval.
 
 ---
 
@@ -154,26 +145,6 @@ cd SamvaadAI/samvaadai
 npm install
 ```
 
-### 3. Configure Environment Variables
-
-Create a `.env.local` file in the application root.
-
-```env
-GNANI_API_KEY=your_gnani_api_key
-
-GNANI_PRISMA_URL=your_prisma_endpoint
-GNANI_TIMBRE_URL=your_timbre_endpoint
-
-TURN_USERNAME=your_turn_username
-TURN_PASSWORD=your_turn_password
-TURN_URL=your_turn_url
-
-NEXT_PUBLIC_STUN_URL=your_stun_url
-
-EVON_ENABLED=false
-```
-
-**Security:** Never commit `.env.local` or expose API keys and TURN credentials in frontend code.
 
 ### 4. Start the Development Server
 
@@ -223,10 +194,9 @@ The speaking participant replies normally. Gnani Prisma transcribes their speech
 
 ## Future Improvements
 
-- Integration of a validated pretrained Indian Sign Language recognition model.
 - Expansion of supported ISL vocabulary.
-- Dynamic sign recognition and sentence-level interpretation.
 - Deeper Gnani Evon integration for contextual language refinement.
+- Dynamic sign recognition and sentence-level interpretation.
 - Support for multiple Indian languages.
 - Improved real-time speech and voice processing.
 - Enhanced accessibility and multilingual communication.
