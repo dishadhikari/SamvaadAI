@@ -4,9 +4,9 @@
 
 **An AI-powered communication platform bridging Indian Sign Language and spoken communication through Gnani AI.**
 
-SamvaadAI enables non-speaking individuals to communicate effortlessly with people who speak normally through a shared, real-time video calling experience.
-Demo Video- https://drive.google.com/file/d/1YVckQVy5MBim6qPXXN49KbhueaLKFwez/view?usp=sharing
-Github Repository- https://github.com/dishadhikari/SamvaadAI
+SamvaadAI enables non-speaking individuals to communicate effortlessly with people who speak normally through a shared, real-time video calling experience.<br>
+Demo Video- https://drive.google.com/file/d/1YVckQVy5MBim6qPXXN49KbhueaLKFwez/view?usp=sharing<br>
+Live Functional Website- https://samvaadai-px75.onrender.com
 
 ---
 
