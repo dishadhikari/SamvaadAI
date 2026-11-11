@@ -1,143 +1,266 @@
-SamvaadAI
-Every Voice Deserves to Be Heard.
 
-An AI-powered, two-way video communication platform connecting Indian Sign Language and spoken communication using Gnani AI.
+# SamvaadAI
 
-Table of Contents
-Overview
-Key Features
-Tech Stack
-System Modules
-Installation & Setup
-Usage Guide
-Future Improvements
-Contributing
-Overview
+### Every Voice Deserves to Be Heard.
 
-Communication should never be limited by one's ability to speak.
+**An AI-powered communication platform bridging Indian Sign Language and spoken communication through Gnani AI.**
 
-SamvaadAI is a video calling platform designed to bridge the communication gap between non-speaking individuals who use Indian Sign Language (ISL) and individuals who communicate through speech.
+SamvaadAI enables non-speaking individuals to communicate effortlessly with people who speak normally through a shared, real-time video calling experience.
 
-Built around Gnani AI's speech and language technologies, SamvaadAI enables both participants to communicate naturally within a single video call.
+---
 
-The platform supports two communication directions:
+## Table of Contents
 
-1. Sign Language to Speech
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [System Modules (Project Structure)](#system-modules-project-structure)
+- [Installation & Setup](#installation--setup)
+- [Usage Guide (User Flow)](#usage-guide-user-flow)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
 
-The non-speaking participant communicates using Indian Sign Language. The sign-processing pipeline extracts hand landmarks and provides an interpretation workflow. The participant reviews and approves the resulting text before it is delivered to the other participant.
+---
 
-Gnani Timbre converts the approved text into AI-generated speech, allowing the speaking participant to receive both text and voice.
+## Overview
 
-2. Speech to Text
+### The Problem
 
-The speaking participant communicates normally through their microphone. Gnani Prisma processes speech and converts it into text, which is displayed to the non-speaking participant in the video call.
+Millions of people with speech disabilities face communication barriers in everyday conversations. While they may communicate through Indian Sign Language (ISL), most people they interact with do not understand it.
 
-The Core Idea
+Existing video calling platforms provide connectivity, but not necessarily accessibility between different communication methods.
 
-One video call. Two communication methods. No communication barrier.
+### Our Solution
 
-Key Features
-Real-Time Video Calling: Two-person video communication using WebRTC and Socket.IO.
-ISL Processing: Webcam-based hand landmark extraction using MediaPipe.
-Text Approval: Allows the non-speaking participant to review and approve interpreted messages.
-Speech Recognition: Gnani Prisma integration for speech-to-text conversion.
-AI Voice Generation: Gnani Timbre integration for converting approved text into speech.
-Two-Way Communication: Connects sign-based communication with spoken communication.
-Meeting Rooms: Create and join conversations using unique meeting codes.
-Live Captions: Browser-based speech transcription fallback.
-AI Reasoning: Optional integration architecture for Gnani Evon contextual refinement.
-Connection Management: Camera, microphone, connection status and reconnection controls.
-Tech Stack
-Technology	Purpose
-Next.js	Application framework
-React	User interface
-TypeScript	Type-safe development
-WebRTC	Real-time audio and video
-Socket.IO	Signaling and message delivery
-MediaPipe	Hand landmark extraction
-Gnani Prisma	Speech-to-text
-Gnani Timbre	Text-to-speech
-Gnani Evon	Contextual reasoning
-STUN / TURN	WebRTC connectivity
-System Modules
+SamvaadAI bridges this gap using artificial intelligence.
 
-The application is organised into the following functional modules:
+It combines real-time video calling with Gnani AI's speech technologies to enable two-way communication between non-speaking and speaking individuals.
 
-Module	Description
-Video Communication	Establishes and manages real-time video calls.
-Room Management	Handles meeting creation, joining and participant sessions.
-Sign Processing	Captures webcam input and extracts hand landmarks.
-Text Approval	Provides an editable message review and approval workflow.
-Speech Processing	Converts spoken audio into text using Gnani Prisma.
-Voice Generation	Converts approved text into speech using Gnani Timbre.
-Real-Time Messaging	Delivers messages, transcriptions and generated audio between participants.
-AI Reasoning	Provides an extension point for Gnani Evon integration.
-Installation & Setup
-Prerequisites
-Node.js
-npm
-Gnani AI API credentials
-TURN server credentials for reliable connectivity across different networks
-1. Clone the Repository
-bash
+### How It Works
+
+#### Direction 1: Indian Sign Language to AI Voice
+
+| Stage | Process |
+|---|---|
+| **Input** | Non-speaking user communicates through ISL |
+| **Processing** | MediaPipe extracts hand landmarks |
+| **Interpretation** | Sign recognition produces text |
+| **Approval** | User reviews and approves the message |
+| **Speech** | Gnani Timbre generates AI voice |
+| **Output** | Speaking user receives text and audio |
+
+#### Direction 2: Speech to Text
+
+| Stage | Process |
+|---|---|
+| **Input** | Speaking user talks normally |
+| **Processing** | Audio is captured from the microphone |
+| **Recognition** | Gnani Prisma converts speech into text |
+| **Delivery** | Transcribed text is sent through the video call |
+| **Output** | Non-speaking user reads the response |
+
+> **One video call. Two communication methods. A more inclusive conversation.**
+
+---
+
+## Key Features
+
+### Real-Time Communication
+
+- Two-person video calling using WebRTC.
+- Meeting creation and joining through unique room codes.
+- Live audio and video communication.
+- Camera and microphone controls.
+- Connection status and reconnection handling.
+
+### Sign Language Communication
+
+- Webcam-based hand landmark extraction using MediaPipe.
+- Sign-to-text processing workflow.
+- Editable interpreted messages.
+- User approval before message delivery.
+- Architecture ready for integration with a trained ISL recognition model.
+
+### Gnani AI Integration
+
+| Gnani Model | Role in SamvaadAI |
+|---|---|
+| **Prisma** | Speech-to-text transcription |
+| **Timbre** | Text-to-speech generation |
+| **Evon** | Contextual reasoning and language refinement |
+
+### Accessible Conversation Experience
+
+- Two-way communication in a single video call.
+- Text and AI-generated voice delivery.
+- Live captions and transcription fallback.
+- Real-time message delivery.
+- User-controlled message approval.
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|---|---|
+| Frontend | Next.js, React, TypeScript |
+| Real-Time Communication | WebRTC |
+| Signaling and Messaging | Socket.IO |
+| Computer Vision | MediaPipe |
+| Speech-to-Text | Gnani Prisma |
+| Text-to-Speech | Gnani Timbre |
+| Language Reasoning | Gnani Evon |
+| Network Connectivity | STUN and TURN |
+
+---
+
+## System Modules (Project Structure)
+
+SamvaadAI is organised into interconnected modules responsible for communication, AI processing and accessibility.
+
+| Module | Responsibility |
+|---|---|
+| **Room Management** | Creates and manages meeting rooms |
+| **Video Communication** | Handles real-time audio and video |
+| **Sign Processing** | Extracts hand landmarks from webcam input |
+| **Text Interpretation** | Converts available sign recognition output into text |
+| **Message Approval** | Allows users to review and approve messages |
+| **Speech Recognition** | Processes spoken audio using Gnani Prisma |
+| **Voice Generation** | Generates speech using Gnani Timbre |
+| **Real-Time Messaging** | Transfers messages between participants |
+| **AI Reasoning** | Provides an extension point for Gnani Evon |
+
+---
+
+## Installation & Setup
+
+### Prerequisites
+
+- Node.js
+- npm
+- Gnani AI API credentials
+- TURN server credentials for cross-network video communication
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/dishadhikari/SamvaadAI.git
 cd SamvaadAI/samvaadai
+```
 
-2. Install Dependencies
-bash
+### 2. Install Dependencies
+
+```bash
 npm install
+```
 
-3. Configure Environment Variables
+### 3. Configure Environment Variables
 
-Create a .env.local file in the application root.
+Create a `.env.local` file in the application root.
 
-env
+```env
 GNANI_API_KEY=your_gnani_api_key
+
 GNANI_PRISMA_URL=your_prisma_endpoint
 GNANI_TIMBRE_URL=your_timbre_endpoint
 
 TURN_USERNAME=your_turn_username
 TURN_PASSWORD=your_turn_password
 TURN_URL=your_turn_url
+
 NEXT_PUBLIC_STUN_URL=your_stun_url
 
 EVON_ENABLED=false
+```
 
+**Security:** Never commit `.env.local` or expose API keys and TURN credentials in frontend code.
 
-Use authorised API endpoints and keep all credentials private. Never commit .env.local to the repository.
+### 4. Start the Development Server
 
-4. Run the Application
-bash
+```bash
 npm run dev
+```
 
+### 5. Open the Application
 
-Open http://localhost:3000 in your browser.
+Visit:
 
-Usage Guide
-Create a Meeting: The first participant creates a room and receives a unique meeting code.
-Join a Meeting: The second participant enters the code to join the video call.
-Sign-Based Communication: The non-speaking participant communicates using ISL through their webcam.
-Review and Approve: The interpreted text is displayed for review before sending.
-AI Voice Generation: The approved message is delivered as text and converted into speech through Gnani Timbre when configured.
-Speech-Based Communication: The other participant replies normally, and Gnani Prisma converts their speech into text for the non-speaking participant.
+```text
+http://localhost:3000
+```
 
-Both participants remain connected through the same video call throughout the conversation.
+---
 
-Future Improvements
-Integration of a validated pretrained Indian Sign Language recognition model.
-Expansion of ISL vocabulary and dynamic sign recognition.
-Improved sentence-level sign interpretation.
-Deeper Gnani Evon integration for contextual language refinement.
-Support for additional Indian languages.
-Reduced latency in real-time transcription and voice generation.
-Improved accessibility and multilingual communication.
-Contributing
+## Usage Guide (User Flow)
 
-Contributions to SamvaadAI are welcome, particularly in sign language recognition, AI integration, accessibility and real-time communication.
+### Step 1: Create a Meeting
 
-Fork the repository.
-Create a feature branch.
-Implement and test your changes.
-Submit a pull request with a clear description.
+The first participant creates a meeting room and receives a unique meeting code.
 
-SamvaadAI — Building bridges between signs, speech and people.
+### Step 2: Join the Meeting
+
+The second participant enters the meeting code and joins the same video call.
+
+### Step 3: Start Communicating
+
+The non-speaking participant communicates using Indian Sign Language, while the other participant speaks normally.
+
+### Step 4: Interpret and Approve
+
+The sign-processing workflow produces text for the non-speaking participant to review and approve.
+
+### Step 5: Deliver the Message
+
+The approved message is delivered to the speaking participant as text and, when configured, as AI-generated speech through Gnani Timbre.
+
+### Step 6: Receive a Response
+
+The speaking participant replies normally. Gnani Prisma transcribes their speech and displays the resulting text to the non-speaking participant.
+
+**The conversation continues in both directions without leaving the video call.**
+
+---
+
+## Future Improvements
+
+- Integration of a validated pretrained Indian Sign Language recognition model.
+- Expansion of supported ISL vocabulary.
+- Dynamic sign recognition and sentence-level interpretation.
+- Deeper Gnani Evon integration for contextual language refinement.
+- Support for multiple Indian languages.
+- Improved real-time speech and voice processing.
+- Enhanced accessibility and multilingual communication.
+
+---
+
+## Contributing
+
+Contributions are welcome in areas including:
+
+- Indian Sign Language recognition.
+- Computer vision and machine learning.
+- AI and speech technology integration.
+- Real-time communication.
+- Accessibility and inclusive design.
+
+### Contribution Steps
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Implement your changes.
+4. Test your implementation.
+5. Submit a pull request with a clear description.
+
+---
+
+## Our Vision
+
+> Communication is a basic human right. It should never be limited by one's ability to speak.
+
+SamvaadAI aims to make conversations more accessible by bringing together signs, speech and artificial intelligence.
+
+---
+
+### SamvaadAI
+
+**Every Voice Deserves to Be Heard.**
