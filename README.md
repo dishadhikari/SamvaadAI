@@ -182,7 +182,7 @@ The sign-processing workflow produces text for the non-speaking participant to r
 
 ### Step 5: Deliver the Message
 
-The approved message is delivered to the speaking participant as text and, when configured, as AI-generated speech through Gnani Timbre.
+The approved message is delivered to the speaking participant as text and AI-generated speech through Gnani Timbre.
 
 ### Step 6: Receive a Response
 
@@ -213,13 +213,9 @@ Contributions are welcome in areas including:
 - Real-time communication.
 - Accessibility and inclusive design.
 
-### Contribution Steps
+### Contributing
 
-1. Fork the repository.
-2. Create a new feature branch.
-3. Implement your changes.
-4. Test your implementation.
-5. Submit a pull request with a clear description.
+Contributions are welcome!
 
 ---
 
@@ -230,7 +226,3 @@ Contributions are welcome in areas including:
 SamvaadAI aims to make conversations more accessible by bringing together signs, speech and artificial intelligence.
 
 ---
-
-### SamvaadAI
-
-**Every Voice Deserves to Be Heard.**
